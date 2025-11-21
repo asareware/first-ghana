@@ -1,0 +1,482 @@
+:root {
+  --bg: #f8f6f9;
+  --text: #201026;
+  --muted: #5f5b65;
+  --accent: #7a33ff;
+  --accent-dark: #4b1bb3;
+  --line: #d9d4df;
+  --card: rgba(255, 255, 255, 0.9);
+  font-family: 'Montserrat', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Lora', serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.page {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem clamp(1.5rem, 6vw, 5.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  z-index: 10;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logo-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.25rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.main-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.65rem 1.75rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-solid {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.btn-solid:hover {
+  background: var(--accent-dark);
+}
+
+main {
+  padding-top: 5.5rem;
+}
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 6vw, 5rem);
+  overflow: hidden;
+  color: white;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.8), transparent 60%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 540px;
+  align-self: start;
+  margin-top: 4rem;
+}
+
+.hero-eyebrow {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.hero-copy {
+  font-family: 'Lora', serif;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ghost-button {
+  background: transparent;
+  border: 0;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hero-card {
+  position: absolute;
+  right: clamp(1.5rem, 6vw, 5rem);
+  bottom: clamp(-3rem, -12vw, -6rem);
+  width: min(380px, 90vw);
+  background: var(--card);
+  color: var(--text);
+  padding: 2rem;
+  border-radius: 24px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 80px rgba(32, 16, 38, 0.2);
+}
+
+.hero-card h2 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+.hero-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.5rem;
+  color: var(--muted);
+}
+
+.hero-card li + li {
+  margin-top: 0.5rem;
+}
+
+.card-eyebrow {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--accent-dark);
+}
+
+.card-date {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.card-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+}
+
+.card-nav button {
+  border: 0;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.media-stack {
+  display: grid;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 6vw, 5rem);
+  margin-top: 4rem;
+}
+
+.media-stack figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.media-stack img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.who-we-are {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  padding: clamp(1.5rem, 6vw, 5rem);
+}
+
+.who-media {
+  position: relative;
+}
+
+.who-media img {
+  width: 100%;
+  border-radius: 32px;
+}
+
+.media-indicators {
+  display: flex;
+  gap: 0.4rem;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.media-indicators button {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background: transparent;
+}
+
+.media-indicators .active {
+  background: white;
+}
+
+.who-copy h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--accent-dark);
+  margin-bottom: 1rem;
+}
+
+.text-link {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.living-ministries {
+  padding: clamp(1.5rem, 8vw, 6rem);
+}
+
+.living-ministries h2 {
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text);
+  text-stroke: 1px var(--text);
+  font-weight: 700;
+}
+
+.featured-ministry {
+  padding: 0 clamp(1.5rem, 6vw, 5rem);
+}
+
+.ministry-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  background: white;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(32, 16, 38, 0.08);
+}
+
+.ministry-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+.card-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.card-controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.card-controls button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.ministry-list {
+  padding: clamp(1.5rem, 6vw, 5rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.site-footer {
+  background: #09030f;
+  color: white;
+  padding: 3rem clamp(1.5rem, 6vw, 5rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.footer-title {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+
+.footer-heading {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.site-footer a {
+  display: inline-flex;
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    flex-wrap: wrap;
+    mix-blend-mode: normal;
+    color: white;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-card {
+    position: relative;
+    inset: unset;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    position: static;
+    background: #0f0816;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
