@@ -1,1 +1,86 @@
-/* Custom styles and Bootstrap overrides */
+:root {
+  --primary: #ac41fd;
+  --primary-size: 0.75rem;
+}
+
+body {
+  font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  color: #f8f9fa;
+  background-color: #0f1020;
+}
+
+.hero-header {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(120deg, rgba(18, 18, 46, 0.4), rgba(18, 18, 46, 0.75)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.7));
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.navbar {
+  position: relative;
+  z-index: 4;
+}
+
+.navbar-brand {
+  letter-spacing: 0.04em;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  border-radius: var(--primary-size);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #9526e3;
+  border-color: #9526e3;
+}
+
+.btn-outline-light {
+  border-radius: calc(var(--primary-size) + 0.25rem);
+}
+
+.letter-spacing-sm {
+  letter-spacing: 0.15em;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    margin: 0.25rem 0;
+  }
+}
